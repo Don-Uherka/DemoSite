@@ -11,6 +11,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 
+import pages.AddUser;
 import pages.HomePage;
 
 public class DemoSiteTest {
@@ -43,8 +44,15 @@ public class DemoSiteTest {
 	@Test
 	public void test() throws InterruptedException {
 		HomePage nav = PageFactory.initElements(driver, HomePage.class);
+		
+		AddUser add = PageFactory.initElements(driver, AddUser.class);
 		nav.navAddAUser();
+		
+		add.signUp("test", "test1");
 		Thread.sleep(2000);
+		
+		
+		
 		nav.navLogin();
 		Thread.sleep(2000);
 				
