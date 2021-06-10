@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
 
 import pages.HomePage;
 
@@ -40,7 +41,13 @@ public class DemoSiteTest {
 		driver.quit();
 	}
 	@Test
-	public void test() {
+	public void test() throws InterruptedException {
+		HomePage nav = PageFactory.initElements(driver, HomePage.class);
+		nav.navAddAUser();
+		Thread.sleep(2000);
+		nav.navLogin();
+		Thread.sleep(2000);
+				
 		
 	}
 }

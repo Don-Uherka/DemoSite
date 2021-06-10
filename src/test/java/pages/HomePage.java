@@ -10,10 +10,19 @@ public class HomePage {
 	private WebElement addUser;
 
 	@FindBy(xpath = "//a[contains(text(),'4. Login')]")
-	private WebElement Login;
+	private WebElement login;
 
 	public static String getUrl() {
 		return URL;
+	}
+	
+	
+	public void navAddAUser() {
+		addUser.click();
+	}
+	
+	public void navLogin() {
+		login.click();
 	}
 
 }
